@@ -1,0 +1,15 @@
+<div class="course-card">
+
+    <div class="course-title">
+        {{courseObj.description}}
+    </div>
+   
+    <img width="300" alt="Angular Logo"
+         src={{courseObj.iconUrl}}>
+
+    <div class="course-description">
+        {{courseObj.longDescription}}
+    </div>
+    
+    <button (click)="onCourseViewed($event)"> View Course </button>
+</div>
