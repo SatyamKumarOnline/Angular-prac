@@ -14,9 +14,9 @@
 </div>
 
 <div class="courses">
-    <course-card  (click)="onCardClicked($event)" [courseObj]="coreCourse"></course-card>
-    <course-card [courseObj]="rxJsCourse"></course-card>
-    <course-card [courseObj]="ngRxCourse"></course-card>
+    <course-card  [courseObj]="coreCourse" (courseSelected)="onCardClicked($event)"></course-card>
+    <course-card [courseObj]="rxJsCourse" (courseSelected)="onCardClicked($event)"></course-card>
+    <course-card [courseObj]="ngRxCourse" (courseSelected)="onCardClicked($event)"></course-card>
 </div>
 
 

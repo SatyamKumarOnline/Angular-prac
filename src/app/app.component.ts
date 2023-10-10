@@ -16,15 +16,15 @@ export class AppComponent {
 
   // Event bubbling, we clicked on botton, child component and events bubbles to 
   // parent componenent,
-  onCardClicked(event:Event) {
-    console.log('App componenent :-- Course Viewed::', event.currentTarget);
+  onCardClicked(course:Course) {
+    console.log('App componenent :--', course);
   }
 
   keyDownHandler(event: Event) {
     console.log('data is::', this.data);
   }
 
-  inputKeyDownHandler(inputValue) {
+  inputKeyDownHandler(inputValue: any) {
     console.log('demoData is::', inputValue);
   }
 }

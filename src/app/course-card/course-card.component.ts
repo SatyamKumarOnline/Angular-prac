@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Course } from '../model/course';
 
 @Component({
   selector: 'course-card',
@@ -6,9 +7,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./course-card.component.css']
 })
 export class CourseCardComponent {
-@Input() courseObj;
+@Input() courseObj: any;
+
+@Output() courseSelected = new EventEmitter<Course>();
 
  onCourseViewed(event:Event) {
-  console.log('Card componenent Course Viewed::', event.currentTarget);
+  this.courseSelected.emit(this.courseObj);
 }
 }
