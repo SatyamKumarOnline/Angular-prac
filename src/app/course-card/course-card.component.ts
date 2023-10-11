@@ -15,4 +15,9 @@ export class CourseCardComponent {
  onCourseViewed(event:Event) {
   this.courseSelected.emit(this.courseObj);
 }
+
+isImagePresent(): boolean {
+  return this.courseObj && this.courseObj.iconUrl;
+
+}
 }

@@ -1,16 +1,27 @@
 <div class="course-card">
+    <div *ngIf="true">
+    </div>
+    <div *ngif="isImagePresent()">
+        Image is present
+    </div>
+    <div *ngIf="false">
+        False
+    </div>
 
     <div class="course-title">
         {{courseIndex}}::
         {{courseObj.description}}
     </div>
-   
-    <img width="300" alt="Angular Logo"
-         src={{courseObj.iconUrl}}>
+
+    <img *ngIf ="courseObj.iconUrl; else noImage" width="300" alt="Angular Logo" src={{courseObj.iconUrl}}>
+
+    <ng-template #noImage>
+        No Image is present.
+    </ng-template>
 
     <div class="course-description">
         {{courseObj.longDescription}}
     </div>
-    
+
     <button (click)="onCourseViewed($event)"> View Course </button>
 </div>
