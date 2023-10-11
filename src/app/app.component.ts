@@ -10,9 +10,7 @@ import { Course } from './model/course';
 export class AppComponent {
   public data: string = 'satyam';
   public demoData: string ='satyam data';
-  public coreCourse = COURSES[0];
-  public rxJsCourse = COURSES[1];
-  public ngRxCourse = COURSES[2];
+  public courses = COURSES;
 
   // Event bubbling, we clicked on botton, child component and events bubbles to 
   // parent componenent,

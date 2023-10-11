@@ -8,10 +8,16 @@ import { Course } from '../model/course';
 })
 export class CourseCardComponent {
 @Input() courseObj: any;
+@Input() courseIndex: any;
 
 @Output() courseSelected = new EventEmitter<Course>();
 
  onCourseViewed(event:Event) {
   this.courseSelected.emit(this.courseObj);
+}
+
+isImagePresent(): boolean {
+  return this.courseObj && this.courseObj.iconUrl;
+
 }
 }

@@ -3,21 +3,20 @@
 <!--Read data, means read from model and show in UI. view-->
 <!--Write data, means write from view to model, TS-->
 
-<input #inputSample [value]=demoData  (keydown)="inputKeyDownHandler(inputSample.value)">
+<input #inputSample [value]=demoData (keydown)="inputKeyDownHandler(inputSample.value)">
 
 
 <div class="top-menu">
 
-    <img class="logo"
-         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+    <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 
 </div>
 
 <div class="courses">
-    <course-card  [courseObj]="coreCourse" (courseSelected)="onCardClicked($event)"></course-card>
-    <course-card [courseObj]="rxJsCourse" (courseSelected)="onCardClicked($event)"></course-card>
-    <course-card [courseObj]="ngRxCourse" (courseSelected)="onCardClicked($event)"></course-card>
+
+    <course-card *ngFor="let course of courses; let i = index;" [courseObj]=course [courseIndex]="i"
+        (courseSelected)="onCardClicked($event)">
+    </course-card>
+   
+
 </div>
-
-
-
