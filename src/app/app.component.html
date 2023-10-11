@@ -14,9 +14,10 @@
 </div>
 
 <div class="courses">
-    <course-card  [courseObj]="coreCourse" (courseSelected)="onCardClicked($event)"></course-card>
-    <course-card [courseObj]="rxJsCourse" (courseSelected)="onCardClicked($event)"></course-card>
-    <course-card [courseObj]="ngRxCourse" (courseSelected)="onCardClicked($event)"></course-card>
+   
+    <course-card *ngFor="let course of courses; let i = index;" [courseObj]=course [courseIndex]="i" (courseSelected)="onCardClicked($event)">
+    </course-card>
+
 </div>
 
 

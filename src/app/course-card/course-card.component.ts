@@ -8,6 +8,7 @@ import { Course } from '../model/course';
 })
 export class CourseCardComponent {
 @Input() courseObj: any;
+@Input() courseIndex: any;
 
 @Output() courseSelected = new EventEmitter<Course>();
 
